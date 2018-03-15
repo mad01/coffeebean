@@ -44,10 +44,27 @@
   revision = "4c0e84591b9aa9e6dcfdf3e020114cd81f89d5f9"
 
 [[projects]]
+  name = "github.com/certifi/gocertifi"
+  packages = ["."]
+  revision = "deb3ae2ef2610fde3330947281941c562861188b"
+  version = "2018.01.18"
+
+[[projects]]
   branch = "master"
   name = "github.com/chai2010/gettext-go"
   packages = ["gettext","gettext/mo","gettext/plural","gettext/po"]
   revision = "bf70f2a70fb1b1f36d90d671a72795984eab0fcb"
+
+[[projects]]
+  name = "github.com/cloudflare/cfssl"
+  packages = ["auth","certdb/dbconf","config","crypto/pkcs7","errors","helpers","helpers/derhelpers","log","multiroot/config","ocsp/config","whitelist"]
+  revision = "db0d0650b6496bfe8061ec56a92edd32d8e75c30"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/cloudflare/redoctober"
+  packages = ["client","config","core","cryptor","ecdh","hipchat","keycache","msp","order","padding","passvault","persist","report","symcrypt"]
+  revision = "c0b30b638ae6f0ef96750577df9e676b49000645"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -122,6 +139,12 @@
   name = "github.com/fatih/camelcase"
   packages = ["."]
   revision = "44e46d280b43ec1531bb25252440e34f1b800b65"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/getsentry/raven-go"
+  packages = ["."]
+  revision = "563b81fc02b75d664e54da31f787c2cc2186780b"
 
 [[projects]]
   name = "github.com/ghodss/yaml"
@@ -232,6 +255,12 @@
   version = "v1.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/jmoiron/sqlx"
+  packages = [".","reflectx"]
+  revision = "cf35089a197953c69420c8d0cecda90809764b1d"
+
+[[projects]]
   name = "github.com/jonboulle/clockwork"
   packages = ["."]
   revision = "2eee05ed794112d45db504eb05aa693efd2b8b09"
@@ -308,6 +337,12 @@
   version = "v2.0.1"
 
 [[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
+
+[[projects]]
   name = "github.com/prometheus/client_golang"
   packages = ["prometheus"]
   revision = "c5b7fccd204277076155f10851dad72b76a49317"
@@ -363,7 +398,7 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
-  packages = ["ssh/terminal"]
+  packages = ["curve25519","ed25519","ed25519/internal/edwards25519","pbkdf2","pkcs12","pkcs12/internal/rc2","scrypt","ssh","ssh/terminal"]
   revision = "bd6f299fb381e4c3393d1c4b1f0b94f5e77650c8"
 
 [[projects]]
@@ -469,6 +504,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "fe220d9c6d2721fe4b918601c499c5e88d2131ae5843a9edc2af63cf5d39169b"
+  inputs-digest = "813232127c1edff1ed34a40d046f0311b53f046060a46ddc800e9d2382e33ac3"
   solver-name = "gps-cdcl"
   solver-version = 1
