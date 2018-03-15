@@ -15,13 +15,13 @@ import (
 	"k8s.io/kubernetes/pkg/kubectl/resource"
 )
 
-func newKubectlClient(kubeconfig string) *kubectlClient {
-	config, err := k8sGetClientConfig(kubeconfig)
+func NewKubectlClient(kubeconfig string) *KubectlClient {
+	config, err := K8sGetClientConfig(kubeconfig)
 	if err != nil {
 		panic(fmt.Sprintf("failed to get kube rest config: %v", err.Error()))
 	}
 
-	e := kubectlClient{
+	e := KubectlClient{
 		waitInterval: 1 * time.Minute,
 		ClientConfig: kutil.NewClientConfig(config, metav1.NamespaceAll),
 	}
@@ -29,13 +29,13 @@ func newKubectlClient(kubeconfig string) *kubectlClient {
 	return &e
 }
 
-// kubectlClient struct
-type kubectlClient struct {
+// KubectlClient struct
+type KubectlClient struct {
 	waitInterval time.Duration
 	ClientConfig clientcmd.ClientConfig
 }
 
-func (e *kubectlClient) apply(path string) error {
+func (e *KubectlClient) Apply(path string) error {
 	f := cmdutil.NewFactory(e.ClientConfig)
 
 	options := &cmd.ApplyOptions{
@@ -64,7 +64,7 @@ func (e *kubectlClient) apply(path string) error {
 		options,
 	)
 	if err != nil {
-		return fmt.Errorf("failed to run apply: %v", err.Error())
+		return fmt.Errorf("failed to run Apply: %v", err.Error())
 	}
 
 	return nil
