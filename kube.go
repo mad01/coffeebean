@@ -1,4 +1,4 @@
-package main
+package coffeebean
 
 import (
 	"k8s.io/client-go/kubernetes"
