@@ -2,3 +2,4 @@ kubectl-client
 _bin
 _release
 .version
+.idea
