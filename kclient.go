@@ -45,7 +45,6 @@ func (e *kubectlClient) apply(path string) error {
 		Cascade: true,
 	}
 
-	// schema, err := f.Validator(cmdutil.GetFlagBool(cmd, "validate"), cmdutil.GetFlagBool(cmd, "openapi-validation"), cmdutil.GetFlagString(cmd, "schema-cache-dir"))
 	cobraCmd := &cobra.Command{
 		Use: "apply",
 	}
