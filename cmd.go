@@ -40,7 +40,7 @@ func cmdApply() *cobra.Command {
 }
 
 func runCmd() error {
-	var rootCmd = &cobra.Command{Use: "kubectl-client"}
+	var rootCmd = &cobra.Command{Use: "coffeebean"}
 	rootCmd.AddCommand(cmdVersion())
 	rootCmd.AddCommand(cmdApply())
 
