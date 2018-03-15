@@ -15,26 +15,27 @@ import (
 	"k8s.io/kubernetes/pkg/kubectl/resource"
 )
 
-func newkClient(kubeconfig string) *kClient {
+func newKubectlClient(kubeconfig string) *kubectlClient {
 	config, err := k8sGetClientConfig(kubeconfig)
 	if err != nil {
 		panic(fmt.Sprintf("failed to get kube rest config: %v", err.Error()))
 	}
 
-	e := kClient{
+	e := kubectlClient{
 		waitInterval: 1 * time.Minute,
 		ClientConfig: kutil.NewClientConfig(config, metav1.NamespaceAll),
 	}
+
 	return &e
 }
 
-// kClient struct
-type kClient struct {
+// kubectlClient struct
+type kubectlClient struct {
 	waitInterval time.Duration
 	ClientConfig clientcmd.ClientConfig
 }
 
-func (e *kClient) apply(path string) error {
+func (e *kubectlClient) apply(path string) error {
 	f := cmdutil.NewFactory(e.ClientConfig)
 
 	options := &cmd.ApplyOptions{

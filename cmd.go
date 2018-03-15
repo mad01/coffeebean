@@ -27,7 +27,7 @@ func cmdApply() *cobra.Command {
 		Short: "apply k8s manifest file",
 		Long:  "",
 		Run: func(cmd *cobra.Command, args []string) {
-			client := newkClient(kubeconfig)
+			client := newKubectlClient(kubeconfig)
 			err := client.apply(filename)
 			if err != nil {
 				fmt.Println(err.Error())
